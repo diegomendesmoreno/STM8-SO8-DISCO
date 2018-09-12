@@ -2,7 +2,7 @@
 -std=c99
 -ferror-limit=100
 -I
-C:\Users\asus\Documents\Fucking Projects\STM8\STM8-SO8-DISCO\STM8L001_pisca_led_timer\EWSTM8\..\STM8L15x_StdPeriph_Driver\inc
+C:\Users\asus\Documents\Fucking Projects\STM8\STM8-SO8-DISCO\STM8L001_pisca_led_timer\EWSTM8\..\STM8L10x_StdPeriph_Driver\inc
 -I
 C:\Users\asus\Documents\Fucking Projects\STM8\STM8-SO8-DISCO\STM8L001_pisca_led_timer\EWSTM8\..\User
 -I
@@ -10,7 +10,7 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\stm8\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\stm8\inc\c
 -I
-C:\Users\asus\Documents\Fucking Projects\STM8\STM8-SO8-DISCO\STM8L001_pisca_led_timer\STM8L15x_StdPeriph_Driver\inc
+C:\Users\asus\Documents\Fucking Projects\STM8\STM8-SO8-DISCO\STM8L001_pisca_led_timer\STM8L10x_StdPeriph_Driver\inc
 -I
 C:\Users\asus\Documents\Fucking Projects\STM8\STM8-SO8-DISCO\STM8L001_pisca_led_timer\User
 -DEWSTM8_IAR=1

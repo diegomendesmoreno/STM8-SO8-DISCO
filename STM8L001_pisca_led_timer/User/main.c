@@ -7,7 +7,7 @@
  */
 
 /* Includes */
-#include "stm8l15x.h"
+#include "stm8l10x.h"
 
 /* Defines de usuário */
 #ifdef _COSMIC_
@@ -35,18 +35,6 @@
       "       POP  A         \n"   \
       "       POPW X           "); \
 }
-  
-/* not connected pins as output low state (the best EMC immunity)
-(PA2, PB0, PB1, PB2, PB3, PB6, PB7, PC1, PC2, PC7, PD0, PD2, PD4, PD7, PE5, PF4) */
-#define CONFIG_UNUSED_PINS_STM8S001                                                          \
-{                                                                                            \
-  GPIOA->DDR |= GPIO_PIN_2;                                                                  \
-  GPIOB->DDR |= GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3 | GPIO_PIN_6 | GPIO_PIN_7; \
-  GPIOC->DDR |= GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_7;                                        \
-  GPIOD->DDR |= GPIO_PIN_0 | GPIO_PIN_2 | GPIO_PIN_4 | GPIO_PIN_7;                           \
-  GPIOE->DDR |= GPIO_PIN_5;                                                                  \
-  GPIOF->DDR |= GPIO_PIN_4;                                                                  \
-}
 
 /* Declaração de Subrotinas */
 static void TIM2_Config(void);
@@ -58,16 +46,11 @@ volatile unsigned char u8_UserSW = 0;
 
 main()
 {
-  /* -------------STM8S001 startup-------------- */
-  /* configure unbonded pins */
-//  CONFIG_UNUSED_PINS_STM8S001;
   /* delay for SWIM connection: ~5seconds */
 //  STARTUP_SWIM_DELAY_5S;
-  /* ------------------------------------------- */
 	
   //Configuração de Clock
-  CLK_SYSCLKDivConfig(CLK_SYSCLKDiv_1);	//Clock interno = 16MHz
-//  CLK_SYSCLKSourceConfig(CLK_SYSCLKSource_HSI);
+  CLK_MasterPrescalerConfig(CLK_MasterPrescaler_HSIDiv1);  //Clock interno = 16MHz
   CLK_PeripheralClockConfig(CLK_Peripheral_TIM2, ENABLE);
   
   /* Inicializações */
@@ -157,7 +140,7 @@ static void TIM2_Config(void)
   TIM2_Cmd(ENABLE);
   
   //Gera um evento para ativar as configurações
-//  TIM2->EGR |= 0x0001;
+  TIM2->EGR |= 0x0001;
   
   //Limpa o flag do TIM2
   TIM2_ClearFlag(TIM2_FLAG_Update);

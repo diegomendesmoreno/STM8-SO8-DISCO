@@ -70,22 +70,22 @@ main()
   
   /* Inicializações */
   /* -- Pin 1 --------------------------------------------------------------- */
-//  GPIO_Init(GPIOD, GPIO_PIN_6, GPIO_MODE_OUT_PP_LOW_FAST); //PD6/AIN6/UART1_RX
-//  GPIO_Init(GPIOA, GPIO_PIN_1, GPIO_MODE_IN_PU_NO_IT); //PA1
+//  GPIO_Init(GPIOD, GPIO_PIN_6, GPIO_MODE_OUT_PP_LOW_FAST);   //PD6/AIN6/UART1_RX
+//  GPIO_Init(GPIOA, GPIO_PIN_1, GPIO_MODE_IN_PU_NO_IT);       //PA1
   /* -- Pin 5 --------------------------------------------------------------- */
-//  GPIO_Init(GPIOB, GPIO_PIN_5, GPIO_MODE_OUT_PP_HIGH_FAST); //PB5/I2C_SDA/[TIM1_BKIN]
-  GPIO_Init(GPIOA, GPIO_PIN_3, GPIO_MODE_OUT_PP_HIGH_FAST);   //PA3/TIM2_CH3/[SPI_NSS]/[UART1_TX] <<<<==== LED
+//  GPIO_Init(GPIOB, GPIO_PIN_5, GPIO_MODE_OUT_PP_HIGH_FAST);  //PB5/I2C_SDA/[TIM1_BKIN]
+  GPIO_Init(GPIOA, GPIO_PIN_3, GPIO_MODE_OUT_PP_HIGH_FAST);    //PA3/TIM2_CH3/[SPI_NSS]/[UART1_TX] <<<<==== LED
   /* -- Pin 6 --------------------------------------------------------------- */
-//  GPIO_Init(GPIOB, GPIO_PIN_4, GPIO_MODE_OUT_PP_LOW_FAST); //PB4/I2C_SCL/[ADC_ETR]
+//  GPIO_Init(GPIOB, GPIO_PIN_4, GPIO_MODE_OUT_PP_LOW_FAST);   //PB4/I2C_SCL/[ADC_ETR]
   /* -- Pin 7 --------------------------------------------------------------- */
-  GPIO_Init(GPIOC, GPIO_PIN_5, GPIO_MODE_IN_FL_IT);      //PC5/SPI_SCK/[TIM2_CH1] <<<<==== USER_SW
-//  GPIO_Init(GPIOC, GPIO_PIN_4, GPIO_MODE_IN_PU_NO_IT); //PC4/CLK_CCO/TIM1_CH4/[AIN2]/[TIM1_CH2N]
-//  GPIO_Init(GPIOC, GPIO_PIN_3, GPIO_MODE_IN_PU_NO_IT); //PC3/TIM1_CH3/[TLI]/[TIM1_CH1N]
+  GPIO_Init(GPIOC, GPIO_PIN_5, GPIO_MODE_IN_FL_IT);            //PC5/SPI_SCK/[TIM2_CH1] <<<<==== USER_SW
+//  GPIO_Init(GPIOC, GPIO_PIN_4, GPIO_MODE_IN_PU_NO_IT);       //PC4/CLK_CCO/TIM1_CH4/[AIN2]/[TIM1_CH2N]
+//  GPIO_Init(GPIOC, GPIO_PIN_3, GPIO_MODE_IN_PU_NO_IT);       //PC3/TIM1_CH3/[TLI]/[TIM1_CH1N]
   /* -- Pin 8 --------------------------------------------------------------- */
-//  GPIO_Init(GPIOD, GPIO_PIN_5, GPIO_MODE_IN_PU_NO_IT); //PD5/AIN5/UART1_TX
-//  GPIO_Init(GPIOD, GPIO_PIN_3, GPIO_MODE_IN_PU_NO_IT); //PD3/AIN4/TIM2_CH2/ADC_ETR
-//  GPIO_Init(GPIOD, GPIO_PIN_1, GPIO_MODE_IN_PU_NO_IT); //PD1/SWIM
-//  GPIO_Init(GPIOC, GPIO_PIN_6, GPIO_MODE_IN_PU_NO_IT); //PC6/SPI_MOSI/[TIM1_CH1]
+//  GPIO_Init(GPIOD, GPIO_PIN_5, GPIO_MODE_IN_PU_NO_IT);       //PD5/AIN5/UART1_TX
+//  GPIO_Init(GPIOD, GPIO_PIN_3, GPIO_MODE_IN_PU_NO_IT);       //PD3/AIN4/TIM2_CH2/ADC_ETR
+//  GPIO_Init(GPIOD, GPIO_PIN_1, GPIO_MODE_IN_PU_NO_IT);       //PD1/SWIM
+//  GPIO_Init(GPIOC, GPIO_PIN_6, GPIO_MODE_IN_PU_NO_IT);       //PC6/SPI_MOSI/[TIM1_CH1]
   /* ------------------------------------------------------------------------ */
   
   EXTI_SetExtIntSensitivity(EXTI_PORT_GPIOC, EXTI_SENSITIVITY_RISE_ONLY);  //Interrução externa PortaC
